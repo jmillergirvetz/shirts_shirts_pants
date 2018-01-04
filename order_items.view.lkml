@@ -41,6 +41,11 @@ view: order_items {
     sql: ${TABLE}.user_id ;;
   }
 
+  measure: total_revenue {
+    type: sum
+    sql: ${sale_price} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, ]
