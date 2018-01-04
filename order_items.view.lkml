@@ -11,7 +11,11 @@ view: order_items {
     type: time
     timeframes: [date,
                 month,
-                year]
+                year,
+                day_of_month,
+                day_of_year,
+                week_of_year,
+                month_num]
     datatype: epoch
     sql: ${TABLE}.created_at ;;
   }
