@@ -11,13 +11,17 @@ datagroup: shirts_and_shirts_default_datagroup {
   max_cache_age: "1 hour"
 }
 
+datagroup: product_facts_build {
+  sql_trigger: SELECT 1 ;;
+}
+
 persist_with: shirts_and_shirts_default_datagroup
 
 explore: order_items {
 
-  join: p_a_c {
+  join: product_facts {
     type: left_outer
     relationship: many_to_one
-    sql_on: ${order_items.product_id} = ${p_a_c.product_id} ;;
+    sql_on: ${order_items.product_id} = ${product_facts.product_id} ;;
   }
 }
