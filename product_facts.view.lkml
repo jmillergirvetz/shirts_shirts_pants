@@ -37,6 +37,7 @@ view: product_facts {
   }
 
   dimension: product_id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.product_id ;;
   }
