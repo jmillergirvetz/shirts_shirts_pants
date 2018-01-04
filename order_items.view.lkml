@@ -12,7 +12,8 @@ view: order_items {
     timeframes: [date,
                 month,
                 year]
-    sql: CAST(${TABLE}.created_at AS TIMESTAMP) ;;
+    datatype: epoch
+    sql: ${TABLE}.created_at ;;
   }
 
   dimension: product_id {
@@ -42,6 +43,6 @@ view: order_items {
 
   measure: count {
     type: count
-    drill_fields: [id]
+    drill_fields: [id, ]
   }
 }
